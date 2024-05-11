@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>   
+</head>
+
+<style>
+    header{
+            background-color: #1c1c1c;
+        }
+        .brand img {
+            width: 150px;
+            height: 80px;
+            object-fit: cover;
+        }
+  *{
+    margin:0px;
+    padding:0px;
+}
+p{
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: aliceblue;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+.container{
+    width:80%;
+    margin: 50px auto;
+}
+
+.contact-box{
+    background: #fff;
+    display:flex;
+}
+.contact-left{
+    flex-basis:60%;
+    padding: 40px 60px;
+}
+.contact-right{
+    flex-basis:40%;
+    padding: 40px;
+    background: black;
+    color:#fff;
+}
+.input-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.input-row .input-group{
+    flex-basis: 45%;
+}
+input{
+    width:100%;
+    border:none;
+    border-bottom: 1px solid #ccc;
+    outline:none;
+    padding-bottom:5px;
+}
+textarea{
+    width:100%;
+    border: 1px solid #ccc;
+    outline:none;
+    padding:10px;
+    box-sizing: border-box;
+}
+label{
+    margin-bottom: 6px;
+    display: block;
+    color: black;
+}
+button{
+    background: black;
+    width:100px;
+    border: none;
+    outline:none;
+    color:#fff;
+    height: 35px;
+    border-radius: 30px;
+    margin-top: 20px;
+    box-shadow: 0px 5px 15px 0px black;
+}
+.contact-left h3{
+    color:black;
+    font-weight: 600;
+    margin-bottom:30px;
+}
+tr td:first-child{
+   padding-right: 20px
+}
+tr td{
+    padding-top: 20px;
+    font-family: sans-serif;
+}
+
+</style>
+
+<body>
+    <header>
+        <div class="brand">
+            <img src="../images/img1.png" alt="nice">
+        </div>
+        </header>
+       <div class="container">
+          <h1>CONTACT US</h1>
+          <p>  We would love to respond to your queries and news4u community is always here to help you out.</p>  
+           <div class="contact-box">
+             <div class="contact-left">
+               <h3>Send your request</h3>
+                <form>
+                  
+                  <div class="input-row">
+                       <div class="input-group">
+                          <label>Name</label>
+                          <input type="text" placeholder="type..">
+                        </div>
+                      
+                       <div class="input-group">
+                         <label>Phone</label>
+                         <input type="text" placeholder="contact number">
+                       </div>
+                   </div>
+                   <div class="input-row">
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input type="text" placeholder="abc12@gmail.com">
+                        </div>
+                      
+                         <div class="input-group">
+                           <label>subject</label>
+                           <input type="text" placeholder="querie">
+                         </div>
+                       
+                  </div>
+                    
+                    <label>Message</label>
+                    <textarea rows="5" placeholder="your message"></textarea>
+                    <button type="submit">SEND</button>
+                     
+                </form>
+
+             </div>
+             <div class="contact-right">
+                <h3>Reach Us</h3>
+
+               <table class="font">
+                   <tr>
+                     
+                     <td>Email</td>
+                     <td>contactus@example.com</td>
+                   </tr>
+                    <tr>
+                        
+                        <td>Phone</td>
+                        <td>+91 9801111877</td>
+                    </tr>
+                    <tr>
+                        
+                        <td>Address</td>
+                        <td>#101,ground floor,7th cross<br>
+                        some layout,some road,california<br>
+                        USA 96162
+                        </td>
+                    </tr>
+               </table>
+
+             </div>
+           </div>
+       </div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State and City Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8; /* Background color */
+        }
+        
+        header {
+            background-color: #1c1c1c;
+            padding: 10px;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1; /* Ensure header is above other content */
+        }
+
+        .brand img {
+            width: 150px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        .selection-container {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 50%;
+            margin-top: 50px;
+            margin-left: -150px; /* Half of the container width */
+            padding: 20px;
+            border: 2px solid #000;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            width: 300px;
+        }
+
+        label {
+            color: #333; /* Label color */
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        select {
+            width: 220px;
+            padding: 10px;
+            margin-bottom: 20px;
+            margin: 0 auto;
+            display: block;
+            border: 2px solid #ccc; /* Border color */
+            border-radius: 5px; /* Rounded corners */
+            background-color: #fff; /* Background color */
+            transition: border-color 0.3s ease; /* Smooth transition */
+        }
+
+        select:hover,
+        select:focus {
+            border-color: #1c1c1c; /* Highlight border on hover/focus */
+        }
+
+        option {
+            font-size: large; /* Option font size */
+        }
+
+        .next-button {
+            display: block;
+            margin: 550px auto; /* Center the button horizontally */
+            padding: 10px 20px;
+            background-color: #1c1c1c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .next-button:hover {
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <img src="../images/img1.png" alt="nice">
+        </div>
+    </header>
+    
+    <div class="selection-container">
+        <label for="state">Select State:</label>
+        <select id="state" onchange="populateCities()">
+            <option value="">Select State</option>
+            <!-- Add option elements dynamically using JavaScript -->
+        </select>
+
+        <br>
+
+        <label for="city">Select City:</label>
+        <select id="city">
+            <option value="">Select City</option>
+            <!-- City options will be populated dynamically based on selected state -->
+        </select>
+    </div>
+
+    <button id="nextButton" class="next-button">Next</button>
+
+    <script>
+        // Define state-city mapping as an object
+        const stateCityMap = {
+            "Andaman and Nicobar Islands": ["Port Blair", "Car Nicobar", "Garacharma", "Bombooflat", "Nancowry"],
+            "Andhra Pradesh": ["Visakhapatnam", "Vijayawada", "Guntur", "Nellore", "Kurnool", "Rajahmundry", "Tirupati", "Kadapa", "Kakinada", "Anantapur"],
+            // Add other states and cities here
+            // Format: "State Name": ["City1", "City2", ...]
+        };
+
+        // Function to populate cities based on selected state
+        function populateCities() {
+            const stateSelect = document.getElementById("state");
+            const citySelect = document.getElementById("city");
+            const selectedState = stateSelect.value;
+            const cities = stateCityMap[selectedState] || [];
+
+            // Clear previous city options
+            citySelect.innerHTML = "<option value=''>Select City</option>";
+
+            // Populate city options
+            cities.forEach(city => {
+                const option = document.createElement("option");
+                option.value = city;
+                option.textContent = city;
+                citySelect.appendChild(option);
+            });
+        }
+
+        // Populate states in the select element
+        window.onload = function() {
+            const stateSelect = document.getElementById("state");
+            for (const state in stateCityMap) {
+                const option = document.createElement("option");
+                option.value = state;
+                option.textContent = state;
+                stateSelect.appendChild(option);
+            }
+        };
+        const nextButton = document.getElementById('nextButton');
+    nextButton.addEventListener('click', function() {
+        window.location.href = 'home.html'; // Replace 'home.html' with the path to your Home page
+    });
+    </script>
+</body>
+</html>

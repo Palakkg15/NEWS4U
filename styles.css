@@ -1,0 +1,392 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #333;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 100px;
+    background-color: #fff;
+}
+
+.brand {
+    width: 300px;
+    height: 90px;
+}
+
+.brand img {
+    width: 250px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.main-nav a {
+    position: relative;
+    margin: 0 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.main-nav a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.right-nav a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.right-nav {
+    display: flex;
+    align-items: center;
+    color: #333;
+}
+
+.right-nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.main-nav a:hover:after {
+    width: 100%;
+}
+
+.right-nav a:hover:after {
+    width: 100%;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 5px;
+    margin: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-button {
+    padding: 8px 15px;
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #0d47a1;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+.tagline {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: #0d47a1;
+    margin-bottom: 10px;
+}
+
+
+p {
+    font-size: 1.2em;
+
+}
+
+.introduction {
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0d47a1;
+}
+
+.features {
+    margin-top: 2em;
+    margin-left: 10px;
+}
+
+.get-started {
+    margin-top: 2em;
+    margin-left: 10px;
+}
+
+
+footer {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    padding: 1em 0;
+}
+
+#slideshow-container {
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.slideshow-item {
+    display: none;
+    text-align: center;
+    /* Center the content within the container */
+}
+
+.slideshow-item.active {
+    display: block;
+}
+
+.slideshow-item img {
+    max-width: 100%;
+    border: 2px solid #000;
+    /* Black border for the image */
+    background-color: #000;
+    /* Ensure the image does not exceed the container width */
+}
+
+.image-caption {
+    background-color: #000;
+    /* Black background for the text */
+    color: #fff;
+    /* White text color */
+    padding: 10px;
+    /* Add padding for better readability */
+}
+
+.overlay-arrows {
+    display: none;
+}
+
+.next-arrow,
+.prev-arrow {
+    display: none;
+}
+
+.arrow:hover {
+    background-color: #ddd;
+}
+
+#prev-arrow {
+    left: 10px;
+}
+
+#next-arrow {
+    right: 10px;
+}
+
+.popular-topics {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.topic-box {
+    width: calc(33.33% - 20px);
+    /* Adjust the width as needed */
+    box-sizing: border-box;
+    border: 2px solid #000;
+    /* Add a black border */
+    position: relative;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.topic-box img {
+    max-width: 100%;
+    height: auto;
+}
+
+.topic-box h3 {
+    font-size: 1em;
+    margin: 0;
+    padding: 10px;
+    background-color: #000;
+    /* Black background for the topic name */
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 0;
+    /* Position the topic name at the bottom */
+    left: 0;
+    right: 0;
+}
+
+.topic-box:hover img {
+    transform: scale(1.1);
+    /* Add a scale effect on hover */
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #333;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: none;
+    position: absolute;
+    /* Position it at the center of the slideshow container */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Initially hide the spinner */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    /* White background for modal content */
+    padding: 20px;
+    border: 1px solid #ddd;
+    /* Add border for visual distinction */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Add shadow for depth */
+    max-width: 400px;
+    width: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #555;
+    /* Close button color */
+}
+
+.close:hover {
+    color: #000;
+    /* Change color on hover */
+}
+
+/* Form styling */
+.signup-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    /* Label color */
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="password"],
+.signup-form input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    /* Input border */
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.signup-form button {
+    padding: 10px 20px;
+    background-color: #4267B2;
+    /* blue color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-form button:hover {
+    background-color: #3b5998;
+    /* Darker shade on hover */
+}
+
+h2,
+p {
+    text-align: center;
+}
+
+h2 {
+    color: #0d47a1;
+}
+
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4023d3;
+    color: #fff;
+    cursor: pointer;
+}

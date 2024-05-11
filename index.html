@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEWS4U</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="brand">
+                <img src="images/img2.jpg" alt="nice">
+            </div>
+            <div class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="pages/faq.html">FAQ</a>
+                <a href="pages/contactus.html">Contact Us</a>
+                <a href="pages/about.html">About Us</a>
+            </div>
+            <div class="right-nav">
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Type...">
+                    <button class="search-button">Search</button>
+                </div>
+                
+                <a href="#" onclick="openSignupModal(); return false;">Sign Up</a>
+                <a href="#" onclick="openLoginModal(); return false;">Login</a>
+            </div>
+        </nav>
+    </header>
+    <div id="slideshow-container">
+        <div class="slideshow-item">
+            <img id="newsImage1" src="" alt="Popular Topic 1">
+            <div class="image-caption" id="imageCaption1"></div>
+        </div>
+        <div class="slideshow-item">
+            <img id="newsImage2" src="" alt="Popular Topic 2">
+            <div class="image-caption" id="imageCaption2"></div>
+        </div>
+        <div class="slideshow-item">
+            <img id="newsImage3" src="" alt="Popular Topic 3">
+            <div class="image-caption" id="imageCaption3"></div>
+        </div>
+        <div class="slideshow-item">
+            <img id="newsImage4" src="" alt="Popular Topic 4">
+            <div class="image-caption" id="imageCaption4"></div>
+        </div>
+        <div class="slideshow-item">
+            <img id="newsImage5" src="" alt="Popular Topic 5">
+            <div class="image-caption" id="imageCaption5"></div>
+        </div>
+        <div class="spinner" id="loadingSpinner"></div>
+    </div>
+    <div class="popular-topics">
+        <div class="topic-box" id="topicBox1">
+            <img src="" alt="Popular Topic 1">
+            <h3>Topic 1</h3>
+            <p>Description for topic 1</p>
+        </div>
+        <div class="topic-box" id="topicBox2">
+            <img src="" alt="Popular Topic 2">
+            <h3>Topic 2</h3>
+            <p>Description for topic 2</p>
+        </div>
+        <div class="topic-box" id="topicBox3">
+            <img src="" alt="Popular Topic 3">
+            <h3>Topic 3</h3>
+            <p>Description for topic 3</p>
+        </div>
+    </div>
+<!-- Add this HTML code within your body tag, after the existing content -->
+<div class="modal" id="signupModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeSignupModal()">&times;</span>
+        <div class="signup-form">
+            <h2>Sign Up</h2>
+            <p>It's quick and easy.</p>
+            <form onsubmit="handleSubmit(event)">
+                <div class="input-group">
+                    <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" name="email" placeholder="Email address" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="New password" required>
+                </div>
+                <div class="input-group">
+                    <input type="date" id="dob" name="dob" placeholder="Date of Birth" required>
+                </div>
+                <div class="input-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <p>By clicking Sign Up, you agree to our Terms, Data Policy and Cookie Policy. You may receive SMS notifications from us and can opt out at any time.</p>
+                <button type="submit" class="signupbutton" id="signupbutton">Sign Up</button>
+            </form>
+            <p class="login-link">Already have an account? <a href="#">Log In</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Login Modal -->
+<div class="modal" id="loginModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeLoginModal()">&times;</span>
+        <h2>Log In</h2>
+        <form action="/" method="post">
+            <label for="email">Email id:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" valu.e="Login">
+        </form>
+    </div>
+</div>
+
+
+    <footer>
+        <p>&copy; 2024 Local News Hub. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of
+                Service</a></p>
+    </footer>
+
+<script src="scripts/script.js"></script>
+</body>
+</html>
+
